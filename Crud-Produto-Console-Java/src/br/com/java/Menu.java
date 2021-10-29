@@ -19,17 +19,18 @@ public class Menu {
                 break;
         
             case 2:
-                System.out.println("Método 2");
+                controle.atualizarProduto();
                 break;
 
             case 3:
-                System.out.println("Método 3");
+                controle.listarProdutos();
                 break;
             case 4:
-                System.out.println("Método 4");
+                controle.deletarProduto();
                 break;
             case 5:
-                System.out.println("Finalizado");    
+                System.out.println("Finalizado");
+                System.exit(0);   
             default:
                 System.out.println("Opção inválida..!");
                 break;

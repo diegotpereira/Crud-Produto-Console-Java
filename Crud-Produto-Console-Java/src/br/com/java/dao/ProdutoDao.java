@@ -14,7 +14,7 @@ public class ProdutoDao {
 
     public void salvarOuAtualizar(Produto produto) {
         if (produtos.contains(produto)) {
-            System.out.println("Produto " + produto.getId() + "atualizado com sucesso!");
+            System.out.println("Produto " + produto.getId() + " atualizado com sucesso!");
 
         } else {
             produtos.add(produto);

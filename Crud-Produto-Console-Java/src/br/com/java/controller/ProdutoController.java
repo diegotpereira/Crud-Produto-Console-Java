@@ -50,9 +50,41 @@ public class ProdutoController {
         List<Produto> lista = dao.listarProdutos();
 
         if (!lista.isEmpty()) {
-            System.out.println("|id \t |nome ");
+            System.out.println("|id \t |nome \t |descrição " + 
+            "\n=================================");
+            for(Produto produto : lista) {
+                System.out.println(produto.getId() + "\t" + 
+                produto.getNome() + "\t" + produto.getDescricao());
+            }
+
         } else {
-            
+            System.out.println("Não existem produto cadastrados");
+        }
+    }
+
+    public void deletarProduto() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Informe o código do Produto que você deseja excluir..!");
+        Produto produto = dao.getProduto(entrada.nextInt());
+
+        if (produto != null) {
+            dao.deletarProduto(produto);
+
+        } else {
+            System.out.println("o código do produto não foi encontrado..!");
+        }
+    }
+
+    public void atualizarProduto() {
+        Scanner entrada = new Scanner(System.in);
+        System.out.println("Informe o código do produto que você deseja atualizar..!");
+        Produto produto = dao.getProduto(entrada.nextInt());
+
+        if (produto != null) {
+            salvarOuAtualizar(produto);
+
+        } else {
+            System.out.println("O código do produto não foi encontrado..!");
         }
     }
 }
